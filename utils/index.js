@@ -33,12 +33,12 @@ export function askRiddle(riddle) {
   let answer;
   do {
     answer = input("Your answer: ");
-    if (answer === riddle.correctAnswer) {
+    if (answer.toLocaleLowerCase() === riddle.correctAnswer.toLocaleLowerCase()) {
       console.log("Correct!");
-    } else if (answer !== riddle.correctAnswer && answer !== "") {
+    } else if (answer.toLocaleLowerCase() !== riddle.correctAnswer.toLocaleLowerCase() && answer !== "") {
       console.log("Wrong answer! try again.");
     }
-  } while (answer !== riddle.correctAnswer);
+  } while (answer.toLocaleLowerCase() !== riddle.correctAnswer.toLocaleLowerCase());
 }
 
 export function measureSolveTime(fn) {
